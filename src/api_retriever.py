@@ -97,4 +97,7 @@ class APIRetriever:
                 logger.warning(f"Server response timeout. Retrying.... {err=}")
                 continue
 
+        if resp is None:
+            raise ValueError(f"There are no response from API call. {url_api}")
+
         return resp
